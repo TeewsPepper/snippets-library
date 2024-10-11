@@ -1,0 +1,83 @@
+.snippet-form-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 2rem;
+    padding: 1rem;
+    background-color: #2e8b57;
+    border-radius: .5rem;
+    width: 90%;
+    max-width: 600px;
+  }
+  
+  .snippet-form {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    height: 100vh;
+  }
+  
+ 
+  
+  .snippet-form input,
+  .snippet-form textarea {
+    width: 100%;
+    padding: 0.5rem;
+    border-radius: .3rem;
+    border: none;
+    background-color: rgb(212, 187, 126);
+    color: #044;
+    font-family: 'Courier Prime', 'monospace';
+    margin-top: 2rem;
+  }
+  .snippet-form input {
+    padding: 1rem;
+    margin-bottom: 1rem;
+  }
+  .snippet-form textarea {
+    min-height: 10rem;
+  }
+  .snippet-form button {
+    width: 30%;
+    padding: 1rem;
+    margin-top: 2rem;
+  }
+  .snippet-preview {
+    margin-top: 2rem;
+    width: 100%;
+    background-color: #044;
+    padding: 1rem;
+    border-radius: .3rem;
+  }
+  
+  .snippet-preview h3 {
+    color: #fff;
+    font-family: 'Rokkitt', sans-serif;
+    margin-bottom: 1rem;
+  }
+  
+  .code-editor {
+    background-color: rgb(212, 187, 126);
+    padding: 1rem;
+    border-radius: .5rem;
+    max-height: 300px;
+    overflow-y: auto;
+  }
+  
+  .submit-btn {
+    background-color: rgb(212, 187, 126);
+    color: #044;
+    border: none;
+    padding: 0.7rem 1rem;
+    font-size: 1.2rem;
+    font-family: 'Courier Prime', 'monospace';
+    border-radius: .3rem;
+    cursor: pointer;
+    margin-top: 1rem;
+  }
+  
+  .submit-btn:hover {
+    background-color: #2e8b57;
+    color: white;
+  }
+  

@@ -1,0 +1,11 @@
+.layout {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Asegura que el layout ocupe todo el alto del viewport */
+    
+  }
+  
+  .content {
+    flex: 1; /* Hace que el contenido ocupe el espacio restante entre el Header y el Footer */
+    
+  }

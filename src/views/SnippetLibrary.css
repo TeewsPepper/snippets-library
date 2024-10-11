@@ -1,0 +1,139 @@
+h1 {
+    font-family: 'Courier Prime', 'monospace';
+    text-align: center;
+    
+}
+/* Estilos base para la página de Snippet Library */
+.snippet-library {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    background-color: #2e8b57; /* Mismo color de fondo */
+    padding: 1rem;
+    font-family: 'Courier Prime', 'monospace'; /* Fuente principal */
+}
+/* .snippet-form {
+    width: 80%;
+    display: block;
+} */
+    
+.textarea-container {
+    width: 100%;
+    display: inline-flex;
+    flex-direction: column;
+    margin-top: 2rem;
+}
+/* .form-input {
+    width:72.5%;
+    margin-top: 1rem;
+} */
+.form-textarea {
+    width: 80%;
+    margin-bottom: 2rem;
+    height: 20vh;
+}
+.form-button {
+    margin-top: 1rem;
+}
+
+/* Título principal */
+.snippet-library h1 {
+    width: 100%;
+    font-family: 'Rokkitt', sans-serif; /* Fuente secundaria */
+    font-size: 2rem;
+    margin: 1rem 0;
+    text-align: start;
+}
+
+/* Estilo para los contenedores de los snippets */
+.snippet-card {
+    background-color: rgb(212, 187, 126); /* Fondo de las tarjetas */
+    color: #044;
+    border-radius: .3rem;
+    padding: 1rem;
+    margin: 1rem 0;
+    width: 90%; /* Se ajusta bien en mobile */
+    max-width: 600px; /* Máximo ancho en desktop */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra suave */
+    transition: transform 0.3s ease;
+}
+
+.snippet-card:hover {
+    transform: translateY(-5px); /* Efecto al pasar el ratón */
+}
+
+/* Título del snippet */
+.snippet-title {
+    font-size: 1.6rem;
+    font-family: 'Rokkitt', sans-serif;
+    margin-bottom: 0.5rem;
+}
+
+/* Descripción del snippet */
+.snippet-description {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    line-height: 1.5;
+}
+
+/* Código del snippet */
+.snippet-code {
+    background-color: #044;
+    color: #fff;
+    padding: 0.8rem;
+    border-radius: .3rem;
+    font-family: 'Courier Prime', 'monospace';
+    overflow-x: auto;
+    font-size: 1rem;
+    line-height: 1.6;
+    width: 100%;
+}
+
+/* Botones de acciones (por ejemplo, copiar código) */
+.snippet-action-btns {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1rem;
+}
+
+.snippet-action-btn {
+    background-color: rgb(212, 187, 126);
+    color: #044;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: .3rem;
+    font-size: 1.2rem;
+    font-family: 'Courier Prime', 'monospace';
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.snippet-action-btn:hover {
+    background-color: #2e8b57;
+    color: #fff;
+}
+/* .enlace {} */
+
+/* Responsive: Ajustes para pantallas más pequeñas */
+@media (max-width: 768px) {
+    .snippet-library-title {
+        font-size: 1.8rem;
+    }
+
+    .snippet-card {
+        width: 95%; /* Ajuste para móviles */
+    }
+
+    .snippet-title {
+        font-size: 1.4rem;
+    }
+
+    .snippet-code {
+        font-size: 0.9rem;
+    }
+}
+
+  

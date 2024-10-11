@@ -1,0 +1,75 @@
+.sign-in-form, .register-form {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease-in-out, opacity 0.5s ease-in-out;
+    opacity: 0;
+  }
+  .sign-in-form button {
+    margin-top: 1rem;
+  }
+  .register-form button {
+    margin-top: 1rem;
+  }
+  /* Cuando la clase 'active' está presente, los formularios se despliegan */
+  .sign-in-form.active, .register-form.active {
+    max-height: 500px; /* Ajusta según el tamaño del formulario */
+    opacity: 1;
+  }
+  
+.container {
+    width: 100%;
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+ justify-content: space-around;
+ background-color: #2e8b57;
+ padding: 1rem;
+ gap: 1rem;
+}
+.logo {
+    font-family: 'Rokkitt',  sans-serif;
+    font-size: 4.9rem;
+    margin-top: 1rem;
+}
+
+label {
+    font-family: 'Courier Prime', 'monospace';
+    font-size: 2.5rem;
+    margin-top: 1rem;
+}
+
+input {
+    width: 100%;
+    padding: 1.2rem;
+    outline: none;
+    border-radius: .3rem;
+    border:none;
+    background-color: rgb(212, 187, 126);
+    color: #044;
+    margin-bottom: 1rem;
+}
+.btn-container {
+    display: flex;
+    gap: 1rem;
+}
+button {
+    border: navajowhite;
+    border-radius: .3rem;
+    font-size: 2.4rem;
+    font-family: 'Courier Prime', 'monospace';
+    padding: .5rem 1rem .3rem 1rem;
+    /* margin-top: 2rem; */
+    background-color: rgb(212, 187, 126);
+    color: #044;
+}
+.error-message {
+    font-family: 'Courier Prime', 'monospace';
+    font-size: 1rem;
+    margin: 2rem 0;
+    background-color: rgb(212, 187, 126);
+    padding: 1rem;
+    border-radius: .3rem;
+    color: rgb(209, 41, 41);
+    line-height: 1.5;
+    text-align: center;
+}

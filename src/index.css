@@ -1,0 +1,38 @@
+@import url('https://fonts.googleapis.com/css2?family=Rokkitt:wght@100..900&family=Oswald:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&family=Oswald:wght@200..700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+ 
+
+  color-scheme: light dark;
+  color: #044;
+  background-color: #000000;
+}
+
+html {
+  font-size: 62.5%;
+}
+body {
+  background-color: rgb(235, 227, 209);
+  position: relative;
+}
+a {
+  text-decoration: none;
+  color: #044;
+  
+}
+   
+
+ 
+
+
+
+
+
+
