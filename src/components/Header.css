@@ -64,7 +64,7 @@ button {
 }
 .error-message {
     font-family: 'Courier Prime', 'monospace';
-    font-size: 1rem;
+    font-size: 2rem;
     margin: 2rem 0;
     background-color: rgb(212, 187, 126);
     padding: 1rem;

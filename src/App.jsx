@@ -6,6 +6,7 @@ import PrivateLayout from "./components/layout/PrivateLayout";
 import Home from "./views/Home";
 import SnippetLibrary from "./views/SnippetLibrary";
 import SnippetList from "./views/SnippetList";
+import DashboardUser from "./views/DashboardUser";
 import "./App.css";
 
 function App() {
@@ -27,6 +28,16 @@ function App() {
           >
             <Route index element={<SnippetLibrary />} />
             <Route path="snippets" element={<SnippetList />} />
+          </Route>
+          <Route
+            path="/dashboard"
+            element={
+              <ProtectedRoute>
+                <PrivateLayout />
+              </ProtectedRoute>
+            }
+          >
+            <Route index element={<DashboardUser />} />  {/* Ruta al dashboard del usuario */}
           </Route>
             
         </Routes>

@@ -1,10 +1,25 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import './SnippetForm.css'
+import DOMPurify from 'dompurify'; // Importa DOMPurify
+import './SnippetForm.css';
 
 const SnippetForm = ({ formData, handleChange, handleSubmit }) => {
+  const sanitizeInput = (data) => {
+    return {
+      title: DOMPurify.sanitize(data.title), // Sanitiza el título
+      code: DOMPurify.sanitize(data.code),   // Sanitiza el código
+      description: DOMPurify.sanitize(data.description), // Sanitiza la descripción
+    };
+  };
+
+  const onSubmit = (e) => {
+    e.preventDefault();
+    const sanitizedData = sanitizeInput(formData); // Sanitiza los datos
+    handleSubmit(sanitizedData); // Envía los datos sanitizados
+  };
+
   return (
-    <form className="snippet-form" onSubmit={handleSubmit}>
+    <form className="snippet-form" onSubmit={onSubmit}>
       <input
         type="text"
         name="title"
@@ -33,4 +48,5 @@ const SnippetForm = ({ formData, handleChange, handleSubmit }) => {
 };
 
 export default SnippetForm;
+
 

@@ -12,12 +12,20 @@
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }
   }
+  .css-100u5tu-singleValue {
+  font-size: 2rem;
+ }
+
   .snippets-list-container {
     padding: 2rem;
+  }
+  .snippets-list-container h1 {
+    font-size: 3.5rem;
   }
   .snippets-list {
     display: flex;
     gap: 2rem;
+    margin-top: 2rem;
   }
   .snippet-description {
     font-size: 2rem;

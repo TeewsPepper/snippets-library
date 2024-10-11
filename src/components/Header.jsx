@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { auth } from '../firebase/firebaseConfig';
 import { signInWithEmailAndPassword, createUserWithEmailAndPassword } from 'firebase/auth';
 import { useNavigate } from 'react-router-dom';
+import DOMPurify from 'dompurify';
 import './Header.css';
 
 // Función para validar el formato del email
@@ -36,18 +37,22 @@ const Header = () => {
   const handleLogin = (e) => {
     e.preventDefault();
     
+    // Sanitizar la entrada
+    const sanitizedLoginEmail = DOMPurify.sanitize(loginEmail);
+    const sanitizedLoginPassword = DOMPurify.sanitize(loginPassword);
+    
     // Validar que los campos no estén vacíos y que el email sea válido
-    if (!loginEmail || !loginPassword) {
+    if (!sanitizedLoginEmail || !sanitizedLoginPassword) {
       setError('Email y contraseña son obligatorios.');
       return;
     }
 
-    if (!isValidEmail(loginEmail)) {
+    if (!isValidEmail(sanitizedLoginEmail)) {
       setError('Por favor ingresa un email válido.');
       return;
     }
 
-    signInWithEmailAndPassword(auth, loginEmail, loginPassword)
+    signInWithEmailAndPassword(auth, sanitizedLoginEmail, sanitizedLoginPassword)
       .then((userCredential) => {
         console.log('Logged in:', userCredential.user);
         setError(''); // Limpiar error al iniciar sesión correctamente
@@ -63,18 +68,22 @@ const Header = () => {
   const handleRegister = (e) => {
     e.preventDefault();
 
+    // Sanitizar la entrada
+    const sanitizedRegisterEmail = DOMPurify.sanitize(registerEmail);
+    const sanitizedRegisterPassword = DOMPurify.sanitize(registerPassword);
+    
     // Validar que los campos no estén vacíos y que el email sea válido
-    if (!registerEmail || !registerPassword) {
+    if (!sanitizedRegisterEmail || !sanitizedRegisterPassword) {
       setError('Email y contraseña son obligatorios.');
       return;
     }
 
-    if (!isValidEmail(registerEmail)) {
+    if (!isValidEmail(sanitizedRegisterEmail)) {
       setError('Por favor ingresa un email válido.');
       return;
     }
 
-    createUserWithEmailAndPassword(auth, registerEmail, registerPassword)
+    createUserWithEmailAndPassword(auth, sanitizedRegisterEmail, sanitizedRegisterPassword)
       .then((userCredential) => {
         console.log('Registered:', userCredential.user);
         setError(''); 
