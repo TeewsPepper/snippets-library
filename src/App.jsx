@@ -1,5 +1,5 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import { AuthProvider } from "./context/AuthContext";
+import { AuthProvider, useAuth } from "./context/AuthContext"; // Asegúrate de exportar useAuth
 import ProtectedRoute from "./components/ProtectedRoute";
 import Layout from "./components/layout/Layout";
 import PrivateLayout from "./components/layout/PrivateLayout";
@@ -27,8 +27,9 @@ function App() {
             }
           >
             <Route index element={<SnippetLibrary />} />
-            <Route path="snippets" element={<SnippetList />} />
+            <Route path="snippets" element={<SnippetWrapper />} /> {/* Usa un wrapper */}
           </Route>
+          
           <Route
             path="/dashboard"
             element={
@@ -39,11 +40,20 @@ function App() {
           >
             <Route index element={<DashboardUser />} />  {/* Ruta al dashboard del usuario */}
           </Route>
-            
         </Routes>
       </Router>
     </AuthProvider>
   );
 }
+
+const SnippetWrapper = () => {
+  const { currentUser } = useAuth(); // Obtén el usuario actual desde el contexto
+
+  return currentUser ? (
+    <SnippetList currentUserId={currentUser.uid} /> // Pasa el ID del usuario
+  ) : (
+    <p>No tienes permisos para ver esta página.</p>
+  );
+};
 
 export default App;

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { collection, query, where, getDocs } from "firebase/firestore";
 import { db } from "../firebase/firebaseConfig";
 import { useAuth } from "../context/AuthContext";
-/* import "./Dashboard.css";  */// Archivo CSS para estilos
+import SnippetList from "./SnippetList"; // Importar SnippetList
 
 const Dashboarduser = () => {
   const { currentUser } = useAuth();
@@ -31,19 +31,10 @@ const Dashboarduser = () => {
   return (
     <div className="dashboard">
       <h1>Your Snippets</h1>
-      <div className="snippets-list">
-        {userSnippets.length > 0 ? (
-          userSnippets.map((snippet) => (
-            <div className="snippet-card" key={snippet.id}>
-              <h2 className="snippet-title">{snippet.title}</h2>
-              <pre className="snippet-code">{snippet.code}</pre>
-              <p className="snippet-description">{snippet.description}</p>
-            </div>
-          ))
-        ) : (
-          <p>No snippets yet.</p>
-        )}
-      </div>
+      {/* Pasar los snippets y el currentUserId al componente SnippetList */}
+      {currentUser && (
+        <SnippetList snippets={userSnippets} currentUserId={currentUser.uid} />
+      )}
     </div>
   );
 };

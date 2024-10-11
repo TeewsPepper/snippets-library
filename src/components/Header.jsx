@@ -54,7 +54,7 @@ const Header = () => {
 
     signInWithEmailAndPassword(auth, sanitizedLoginEmail, sanitizedLoginPassword)
       .then((userCredential) => {
-        console.log('Logged in:', userCredential.user);
+        
         setError(''); // Limpiar error al iniciar sesión correctamente
         navigate('/library');
       })
