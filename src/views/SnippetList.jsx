@@ -61,20 +61,25 @@ const SnippetList = ({ currentUserId }) => {
       boxShadow: 'none',
       backgroundColor: 'rgb(212, 187, 126)',
       fontFamily: 'Courier Prime, monospace', // Fuente personalizada
+      width: '25rem'
     }),
     option: (provided, state) => ({
       ...provided,
       backgroundColor: state.isFocused ? 'rgb(212, 187, 126)' : '#fff', // Color de fondo al pasar el mouse
       color: state.isFocused ? '#000' : '#333', // Color del texto al pasar el mouse
       padding: '10px', // Espaciado interno de las opciones
+      fontSize: '2rem',
+      width: '25rem'
     }),
     menu: (provided) => ({
       ...provided,
       zIndex: 100, // Asegúrate de que el menú esté encima de otros elementos
+      width: '25rem'
     }),
     placeholder: (provided) => ({
       ...provided,
       color: '#aaa', // Color del placeholder
+      width: '20rem'
     }),
     singleValue: (provided) => ({
       ...provided,
@@ -107,7 +112,7 @@ const SnippetList = ({ currentUserId }) => {
             </div>
           ))
         ) : (
-          <p>No snippets found.</p>
+          <p className="not-found">No snippets found.</p>
         )}
       </div>
       

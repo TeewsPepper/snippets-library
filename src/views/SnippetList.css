@@ -27,6 +27,13 @@
     gap: 2rem;
     margin-top: 2rem;
   }
+ 
+  .not-found {
+    
+    font-size: 5rem;
+    font-family: 'Courier Prime', 'monospace';
+    text-align: center;
+  }
   .snippet-description {
     font-size: 2rem;
   }

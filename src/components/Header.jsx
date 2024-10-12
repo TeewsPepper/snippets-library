@@ -97,6 +97,22 @@ const Header = () => {
       });
   };
 
+  // Función para iniciar sesión como invitado
+  const handleGuestLogin = () => {
+    const guestEmail = "guestUser@example.com"; // Cambia esto por el email de tu usuario de prueba
+    const guestPassword = "guestPassword"; // Cambia esto por la contraseña de tu usuario de prueba
+
+    signInWithEmailAndPassword(auth, guestEmail, guestPassword)
+      .then((userCredential) => {
+        setError('');
+        navigate('/library');
+      })
+      .catch((error) => {
+        console.error('Error logging in as guest:', error);
+        setError('Error al iniciar sesión como invitado.');
+      });
+  };
+
   return (
     <div className="container">
       <h1 className="logo">LA TAPERA INVISIBLE</h1>
@@ -124,6 +140,7 @@ const Header = () => {
 
         <button type="submit">Login</button>
       </form>
+      
 
       {/* Formulario de registro */}
       <form className={`register-form ${showRegisterForm ? 'active' : ''}`} onSubmit={handleRegister}>
@@ -154,6 +171,7 @@ const Header = () => {
         <button type="button" onClick={handleSignUpClick}>
           Sign up
         </button>
+        <button type="button" onClick={handleGuestLogin}>O entrar como invitado</button>
       </div>
     </div>
   );

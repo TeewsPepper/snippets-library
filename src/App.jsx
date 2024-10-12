@@ -47,7 +47,7 @@ function App() {
 }
 
 const SnippetWrapper = () => {
-  const { currentUser } = useAuth(); // Obtén el usuario actual desde el contexto
+  const { currentUser } = useAuth(); // Obtiene el usuario actual desde el contexto
 
   return currentUser ? (
     <SnippetList currentUserId={currentUser.uid} /> // Pasa el ID del usuario
